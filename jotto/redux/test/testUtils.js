@@ -1,5 +1,17 @@
 import checkPropTypes from "check-prop-types";
-import { enhanceUnexpectedTokenMessage } from "@jest/transform/build/enhanceUnexpectedTokenMessage";
+import { createStore } from "redux";
+
+import rootReducer from "../src/reducers";
+
+/**
+ * Create a testing store with imnported reducers, middleware and initial state.
+ * @param {object} initialState - Initialstate for store.
+ * @function storeFactory
+ * @returns{Store} - Redux store
+ */
+export const storeFactory = (initialState) => {
+  return createStore(rootReducer, initialState);
+};
 
 /**
  * Return node(s) with the given data-test attribute.
