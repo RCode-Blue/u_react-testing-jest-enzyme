@@ -12,7 +12,6 @@ import Input from "./Input";
  */
 const setup = (initialState = {}) => {
   const store = storeFactory(initialState);
-  // console.log(store.getState());
   const wrapper = shallow(<Input store={store} />)
     .dive()
     .dive();
