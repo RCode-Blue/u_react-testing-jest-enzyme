@@ -18,7 +18,7 @@ const setup = (state = {}) => {
   return wrapper;
 };
 
-setup();
+// setup();
 
 describe("redux properties", () => {
   test("has access to `success` state", () => {
