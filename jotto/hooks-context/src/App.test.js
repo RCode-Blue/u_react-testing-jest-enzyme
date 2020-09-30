@@ -8,7 +8,7 @@ import App from "./App";
  * @returns {ShallowWrapper}
  *
  */
-const setup = () => {
+const setup = (secretWord = "party") => {
   return shallow(<App />);
 };
 
