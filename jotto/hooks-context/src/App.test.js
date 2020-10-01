@@ -43,4 +43,15 @@ describe("getSecretWord calls", () => {
     // ccheck to see if secret word was updates
     expect(mockGetSecretWord).toHaveBeenCalled();
   });
+
+  test("secretWord does not update on App update", () => {
+    const wrapper = setupMount();
+    mockGetSecretWord.mockClear();
+
+    // wrapper.update() doesn not trigger update
+    // (issue forked from // https://github.com/enzymejs/enzyme/issues/2091)
+    wrapper.setProps();
+
+    expect(mockGetSecretWord).not.toHaveBeenCalled();
+  });
 });
